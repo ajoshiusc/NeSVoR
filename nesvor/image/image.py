@@ -617,7 +617,6 @@ def load_slices(
             mask_tensor = torch.tensor(mask, device=device, dtype=torch.bool)
         else:
             mask_tensor = torch.ones_like(slice_tensor, dtype=torch.bool)
-        # slice_tensor > 0
         slice_tensor, mask_tensor, transformation = affine2transformation(
             slice_tensor, mask_tensor, resolutions, affine
         )
